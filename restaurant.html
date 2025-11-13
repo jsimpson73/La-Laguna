@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Laguna Restaurante Tradicional</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .menu-filter {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .filter-btn {
+            background-color: #006847;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            margin: 0.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .filter-btn:hover {
+            background-color: #c41e3a;
+            transform: scale(1.05);
+        }
+
+        .filter-btn.active {
+            background-color: #c41e3a;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .menu-category {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .menu-category.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 2rem 0;
+            color: #006847;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #c41e3a;
+        }
+    </style>
+<script src="/script.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <h1 class="store-name">🌮 Restaurante Tradicional 🌮</h1>
+            <p class="tagline">Authentic Mexican Cuisine</p>
+        </div>
+    </header>
+
+    <!-- Restaurant Hero -->
+    <div class="restaurant-hero">
+        <h1>Bienvenidos!</h1>
+        <p>Homemade Mexican food prepared fresh daily with love and tradition</p>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Store</a>
+
+        <!-- Menu Filter Buttons -->
+        <div class="menu-filter">
+            <button class="filter-btn active" onclick="showCategory('all')">All Items</button>
+            <button class="filter-btn" onclick="showCategory('tacos')">Tacos</button>
+            <button class="filter-btn" onclick="showCategory('tortas')">Tortas</button>
+            <button class="filter-btn" onclick="showCategory('plates')">Plate Meals</button>
+            <button class="filter-btn" onclick="showCategory('drinks')">Drinks</button>
+            <button class="filter-btn" onclick="showCategory('desserts')">Desserts</button>
+        </div>
+
+        <!-- Menu Section -->
+        <section class="menu-section">
+            
+            <!-- Tacos Category -->
+            <div class="menu-category active" data-category="tacos">
+                <h3>🌮 Tacos</h3>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <div class="item-name">Tacos de Carne Asada</div>
+                            <div class="item-description">Grilled marinated beef with onions, cilantro, and lime</div>
+                        </div>
+                        <div class="item-price">$3.50</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <div class="item-name">Tacos al Pastor</div>
+                            <div class="item-description">Marinated pork with pineapple, onions, and cilantro</div>
+                        </div>
+                        <div class="item-price">$3.50</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <div class="item-name">Tacos de Carnitas</div>
+                            <div class="item-description">Slow-cooked pork with onions and cilantro</div>
+                        </div>
+                        <div class="item-price">$3.25</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <div class="item-name">Tacos de Pollo</div>
+                            <div class="item-description">Seasoned chicken with lettuce, tomato, and cheese</div>
+                        </div>
+                        <div class="item-price">$3.25</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <div class="item-name">Tacos de Lengua</div>
+                            <div class="item-description">Tender beef tongue with onions and cilantro</div>
+                        </div>
+                        <div class="item-price">$4.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <div class="item-name">Tacos de Pescado</div>
+                            <div class="item-description">Fried fish with cabbage, pico de gallo, and chipotle mayo</div>
+                        </div>
+                        <div class="item-price">$4.25</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tortas Category -->
+            <div class="menu-category active" data-category="tortas">
+                <h3>🥖 Tortas (Mexican Sandwiches)</h3>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <div class="item-name">Torta de Milanesa</div>
+                            <div class="item-description">Breaded beef or chicken with beans, lettuce, tomato, avocado, and jalapeños</div>
+                        </div>
+                        <div class="item-price">$9.50</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <div class="item-name">Torta de Carne Asada</div>
+                            <div class="item-description">Grilled beef with beans, lettuce, tomato, avocado, and cheese</div>
+                        </div>
+                        <div class="item-price">$9.75</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <div class="item-name">Torta Cubana</div>
+                            <div class="item-description">Ham, sausage, milanesa, egg, cheese, beans, and all the fixings</div>
+                        </div>
+                        <div class="item-price">$11.50</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <div class="item-name">Torta de Carnitas</div>
+                            <div class="item-description">Slow-cooked pork with beans, lettuce, tomato, and avocado</div>
+                        </div>
+                        <div class="item-price">$9.25</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plate Meals Category -->
+            <div class="menu-category active" data-category="plates">
+                <h3>🍽️ Plate Meals (Platillos)</h3>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <div class="item-name">Carne Asada Plate</div>
+                            <div class="item-description">Grilled beef with rice, beans, salad, and tortillas</div>
+                        </div>
+                        <div class="item-price">$13.99</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <div class="item-name">Enchiladas Verdes</div>
+                            <div class="item-description">Three chicken enchiladas with green sauce, rice, and beans</div>
+                        </div>
+                        <div class="item-price">$11.99</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <div class="item-name">Mole Poblano</div>
+                            <div class="item-description">Chicken in traditional mole sauce with rice, beans, and tortillas</div>
+                        </div>
+                        <div class="item-price">$12.99</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <div class="item-name">Chile Relleno Plate</div>
+                            <div class="item-description">Two stuffed poblano peppers with rice, beans, and tortillas</div>
+                        </div>
+                        <div class="item-price">$12.50</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <div class="item-name">Fajitas (Beef or Chicken)</div>
+                            <div class="item-description">Sizzling fajitas with peppers, onions, rice, beans, and tortillas</div>
+                        </div>
+                        <div class="item-price">$14.99</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <div class="item-name">Pozole (Weekends Only)</div>
+                            <div class="item-description">Traditional hominy soup with pork, served with tostadas</div>
+                        </div>
+                        <div class="item-price">$10.99</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <div class="item-name">Menudo (Weekends Only)</div>
+                            <div class="item-description">Traditional tripe soup, perfect for Sunday mornings</div>
+                        </div>
+                        <div class="item-price">$11.99</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Breakfast Category -->
+            <div class="menu-category active" data-category="breakfast">
+                <h3>🍳 Breakfast (Desayunos)</h3>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <div class="item-name">Huevos Rancheros</div>
+                            <div class="item-description">Fried eggs on tortillas with ranchero sauce, rice, and beans</div>
+                        </div>
+                        <div class="item-price">$8.99</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <div class="item-name">Chilaquiles</div>
+                            <div class="item-description">Tortilla chips in green or red sauce with eggs, cheese, and cream</div>
+                        </div>
+                        <div class="item-price">$9.50</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <div class="item-name">Breakfast Burrito</div>
+                            <div class="item-description">Eggs, chorizo, potatoes, cheese, and beans wrapped in a flour tortilla</div>
+                        </div>
+                        <div class="item-price">$7.99</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <div class="item-name">Huevos con Chorizo</div>
+                            <div class="item-description">Scrambled eggs with Mexican sausage, rice, beans, and tortillas</div>
+                        </div>
+                        <div class="item-price">$9.25</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <div class="item-name">Machaca con Huevo</div>
+                            <div class="item-description">Shredded beef with eggs, peppers, onions, rice, and beans</div>
+                        </div>
+                        <div class="item-price">$10.50</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drinks Category -->
+            <div class="menu-category active" data-category="drinks">
+                <h3>🥤 Beverages (Bebidas)</h3>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <div class="item-name">Horchata</div>
+                            <div class="item-description">Traditional rice and cinnamon drink</div>
+                        </div>
+                        <div class="item-price">$3.50</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <div class="item-name">Jamaica</div>
+                            <div class="item-description">Hibiscus flower tea</div>
+                        </div>
+                        <div class="item-price">$3.50</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <div class="item-name">Tamarindo</div>
+                            <div class="item-description">Sweet and tangy tamarind drink</div>
+                        </div>
+                        <div class="item-price">$3.50</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <div class="item-name">Mexican Coca-Cola</div>
+                            <div class="item-description">Made with real cane sugar</div>
+                        </div>
+                        <div class="item-price">$2.50</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <div class="item-name">Jarritos</div>
+                            <div class="item-description">Various flavors available</div>
+                        </div>
+                        <div class="item-price">$2.50</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <div class="item-name">Fresh Squeezed Orange Juice</div>
+                            <div class="item-description">Made to order</div>
+                        </div>
+                        <div class="item-price">$4.50</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desserts Category -->
+            <div class="menu-category active" data-category="desserts">
+                <h3>🍰 Desserts (Postres)</h3>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <div class="item-name">Flan</div>
+                            <div class="item-description">Traditional Mexican custard with caramel</div>
+                        </div>
+                        <div class="item-price">$4.50</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <div class="item-name">Tres Leches Cake</div>
+                            <div class="item-description">Moist cake soaked in three types of milk</div>
+                        </div>
+                        <div class="item-price">$5.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <div class="item-name">Churros</div>
+                            <div class="item-description">Fried dough pastry with cinnamon sugar</div>
+                        </div>
+                        <div class="item-price">$4.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <div class="item-name">Arroz con Leche</div>
+                            <div class="item-description">Sweet rice pudding with cinnamon</div>
+                        </div>
+                        <div class="item-price">$3.50</div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <div style="text-align: center; margin: 3rem 0; padding: 2rem; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <h3 style="color: #c41e3a; margin-bottom: 1rem;">Visit Us Today!</h3>
+            <p style="font-size: 1.1rem; color: #666;">Dine in or take out • Open 7 days a week</p>
+            <p style="margin-top: 1rem; font-weight: bold; color: #006847;">All dishes made fresh to order with authentic recipes</p>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Marketa & Carnecería - Restaurante Tradicional</p>
+        <p style="margin-top: 0.5rem;">Serving authentic Mexican cuisine with pride</p>
+    </footer>
+
+    <!-- JavaScript for Dynamic Menu -->
+    <script>
+        function showCategory(category) {
+            // Get all menu categories and filter buttons
+            const categories = document.querySelectorAll('.menu-category');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            // Remove active class from all buttons
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+            
+            if (category === 'all') {
+                // Show all categories
+                categories.forEach(cat => {
+                    cat.classList.add('active');
+                });
+            } else {
+                // Hide all categories first
+                categories.forEach(cat => {
+                    cat.classList.remove('active');
+                });
+                
+                // Show only selected category
+                const selectedCategory = document.querySelector(`[data-category="${category}"]`);
+                if (selectedCategory) {
+                    selectedCategory.classList.add('active');
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
